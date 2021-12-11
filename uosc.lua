@@ -2523,11 +2523,9 @@ if options.speed then
 		step_distance = nil,
 		font_size = nil,
 		get_effective_proximity = function(this)
-			if elements.timeline.proximity_raw == 0 then return 0 end
 			if is_element_persistent('speed') then return 1 end
 			if this.forced_proximity then return this.forced_proximity end
-			local timeline_proximity = elements.timeline.forced_proximity or elements.timeline.proximity
-			return this.forced_proximity or math[cursor.hidden and 'min' or 'max'](this.proximity, timeline_proximity)
+			return this.forced_proximity or this.proximity
 		end,
 		update_dimensions = function(this)
 			this.height = state.fullormaxed and options.speed_size_fullscreen or options.speed_size
