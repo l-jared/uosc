@@ -1750,7 +1750,7 @@ function render_top_bar(this)
 		local clip_coordinates = this.ax..','..this.ay..','..(this.title_bx - this.spacing)..','..this.by
 
 		ass:new_event()
-		ass:append('{\\q2\\blur0\\bord1\\shad0\\1c&HFFFFFF\\3c&H000000\\fn'..config.font..'\\fs'..this.font_size..bold_tag..'\\clip('..clip_coordinates..')')
+		ass:append('{\\q2\\blur0\\bord2\\shad0\\1c&H'..options.color_background_text..'\\3c&H'..options.color_foreground_text..'\\fn'..config.font..'\\fs'..this.font_size..bold_tag..'\\clip('..clip_coordinates..')')
 		ass:append(ass_opacity(1, opacity))
 		ass:pos(this.ax + this.spacing, this.ay + (this.size / 2))
 		ass:an(4)
@@ -2372,7 +2372,7 @@ elements:add('top_bar', Element.new({
 		this.size = state.fullormaxed and options.top_bar_size_fullscreen or options.top_bar_size
 		this.icon_size = round(this.size / 8)
 		this.spacing = math.ceil(this.size * 0.25)
-		this.font_size = math.floor(this.size - (this.spacing * 2))
+		this.font_size = math.floor(this.size - (this.spacing * 1.8))
 		this.button_width = round(this.size * 1.15)
 		this.ay = elements.window_border.size
 		this.bx = display.width - elements.window_border.size
