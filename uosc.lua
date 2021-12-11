@@ -1898,7 +1898,7 @@ function render_volume(this)
 		local font_size = round(((this.width * 0.6) - (#volume_string * (this.width / 20))) * options.volume_font_scale)
 		if fay < slider.by - slider.spacing then
 			ass:new_event()
-			ass:append('{\\blur0\\bord0\\shad0\\1c&H'..options.color_foreground_text..'\\fn'..config.font..'\\fs'..font_size..bold_tag..'\\clip('..fpath.scale..', '..fpath.text..')}')
+			ass:append('{\\blur0\\bord0\\shad0\\1c&H'..options.color_background..'\\fn'..config.font..'\\fs'..font_size..bold_tag..'\\clip('..fpath.scale..', '..fpath.text..')}')
 			ass:append(ass_opacity(math.min(options.volume_opacity + 0.1, 1), opacity))
 			ass:pos(slider.ax + (slider.width / 2), slider.by - slider.spacing)
 			ass:an(2)
