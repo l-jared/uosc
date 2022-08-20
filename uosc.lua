@@ -1665,7 +1665,7 @@ function render_timeline(this)
 		if (rendered_chapters and state.chapters) then
 			for i = #state.chapters, 1, -1 do
 				local chapter = state.chapters[i]
-				if hovered_seconds >= chapter.time then
+				if hovered_seconds >= chapter.time or (hovered_seconds < 1 and chapter.time < 1) then
 					chapter_title = chapter.title_wrapped
 					chapter_title_width = chapter.title_wrapped_width
 					break
