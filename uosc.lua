@@ -2076,7 +2076,7 @@ function render_menu(this)
 			local icon_size = this.font_size
 
 			if is_active then
-				font_color, background_color = options.color_foreground_text, options.color_foreground
+				font_color, background_color = options.color_background, options.color_foreground
 				ass_shadow, ass_shadow_color = '\\shad0', ''
 			else
 				font_color, background_color = options.color_background_text, options.color_background
